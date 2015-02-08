@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E0982981A83CEAB004680F1 /* PKSceneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0982971A83CEAB004680F1 /* PKSceneExtension.swift */; };
+		7E5982581A8358B500B1B113 /* PKImageSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5982571A8358B500B1B113 /* PKImageSet.swift */; };
+		7E7EC8641A86CBB6008781A8 /* PKTextSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7EC8631A86CBB6008781A8 /* PKTextSet.swift */; };
+		7E9406DC1A849AE600CD0876 /* PKFileManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9406DB1A849AE600CD0876 /* PKFileManage.swift */; };
+		7E9634231A8695000059A06E /* PKActionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9634221A8695000059A06E /* PKActionExtension.swift */; };
 		7ED622F01A8357E100E72604 /* Pumpkin.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED622EF1A8357E100E72604 /* Pumpkin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7ED622F61A8357E100E72604 /* Pumpkin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED622EA1A8357E100E72604 /* Pumpkin.framework */; };
 		7ED622FD1A8357E100E72604 /* PumpkinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED622FC1A8357E100E72604 /* PumpkinTests.swift */; };
@@ -23,6 +28,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E0982971A83CEAB004680F1 /* PKSceneExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKSceneExtension.swift; sourceTree = "<group>"; };
+		7E5982571A8358B500B1B113 /* PKImageSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKImageSet.swift; sourceTree = "<group>"; };
+		7E7EC8631A86CBB6008781A8 /* PKTextSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKTextSet.swift; sourceTree = "<group>"; };
+		7E9406DB1A849AE600CD0876 /* PKFileManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKFileManage.swift; sourceTree = "<group>"; };
+		7E9634221A8695000059A06E /* PKActionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKActionExtension.swift; sourceTree = "<group>"; };
 		7ED622EA1A8357E100E72604 /* Pumpkin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pumpkin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED622EE1A8357E100E72604 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ED622EF1A8357E100E72604 /* Pumpkin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pumpkin.h; sourceTree = "<group>"; };
@@ -72,6 +82,11 @@
 			isa = PBXGroup;
 			children = (
 				7ED622EF1A8357E100E72604 /* Pumpkin.h */,
+				7E5982571A8358B500B1B113 /* PKImageSet.swift */,
+				7E7EC8631A86CBB6008781A8 /* PKTextSet.swift */,
+				7E9634221A8695000059A06E /* PKActionExtension.swift */,
+				7E9406DB1A849AE600CD0876 /* PKFileManage.swift */,
+				7E0982971A83CEAB004680F1 /* PKSceneExtension.swift */,
 				7ED622ED1A8357E100E72604 /* Supporting Files */,
 			);
 			path = Pumpkin;
@@ -209,6 +224,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E9406DC1A849AE600CD0876 /* PKFileManage.swift in Sources */,
+				7E0982981A83CEAB004680F1 /* PKSceneExtension.swift in Sources */,
+				7E7EC8641A86CBB6008781A8 /* PKTextSet.swift in Sources */,
+				7E5982581A8358B500B1B113 /* PKImageSet.swift in Sources */,
+				7E9634231A8695000059A06E /* PKActionExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +339,7 @@
 		7ED623011A8357E100E72604 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -328,12 +349,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		7ED623021A8357E100E72604 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -395,6 +418,7 @@
 				7ED623021A8357E100E72604 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7ED623031A8357E100E72604 /* Build configuration list for PBXNativeTarget "PumpkinTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +427,7 @@
 				7ED623051A8357E100E72604 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
