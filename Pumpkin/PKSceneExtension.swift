@@ -26,7 +26,9 @@ private let viewpos = (height:(full:view_height,
     width:(full:view_width,
         half:view_half_width,
         half_left:view_half_width_halfleft,
-        half_right:view_half_width_halfright));
+        half_right:view_half_width_halfright
+    )
+);
 
 
 extension SKScene{
@@ -53,6 +55,6 @@ extension SKScene{
         }
     }
     public func PKfetchViewSize()->(Height:CGFloat,Width:CGFloat){
-        return (UIScreen.mainScreen().bounds.size.height,UIScreen.mainScreen().bounds.size.width);
+        return (view_height.cgfloat,view_width.cgfloat);
     }
 }
