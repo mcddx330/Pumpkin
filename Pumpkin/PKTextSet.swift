@@ -38,7 +38,7 @@ extension PKTextSet{
                 txt.removeRange(txt.startIndex..<pos);
             }else{
                 if(isMultiLine == true){
-                    MultiLine.append(chktxt);
+                    MultiLine.append(chktxt as! String);
                     isMultiLine = false;
                 }
                 break whl;
