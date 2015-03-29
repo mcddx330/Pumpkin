@@ -66,7 +66,8 @@ SpriteKit.frameworkでよく使うであろう関数や部位、ゲームのセ�
 #### PKTextSet
 - PKTextSet(text: "hogefuga")
  - checkMultiLineText(checkString: "\n / | / etc...")-> (Result:Bool,Lines:Array<String>)  
-改行を含んだテキスト（長いセリフなど）を表示する際、先頭の文字から指定した印までの文字数を計算し、各行の文章を配列に挿入した上で返します。  
+改行を含んだテキスト（長いセリフなど）を表示する際に先頭の文字から指定した印までの文字数を計算し、  
+各行の文章を配列に挿入した上で返します。  
 改行を含んだテキストではない場合はResultの値が **false** となります。
 
 #### PKFileManage
@@ -88,3 +89,10 @@ saveDataを参照した上で、アプリケーションの保存領域に指定
 ### ライセンス
 -
 MIT License
+
+
+### ToDo
+-
+
+- テキストを文字ごとに出力
+- フェードイン・フェードアウト関連
