@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 dimbow. All rights reserved.
 //
 
-import Foundation
 import SpriteKit
 
 private let view_height = (cgfloat:UIScreen.mainScreen().bounds.size.height,double:Double(UIScreen.mainScreen().bounds.size.height));
@@ -32,26 +31,26 @@ private let viewpos = (height:(full:view_height,
 
 
 extension SKScene{
-    public func PKshowGridLines(){
-        let line_vertical = SKSpriteNode(color: UIColor.whiteColor(), size: CGSizeMake(viewpos.width.full.cgfloat, 1));
+    public func PKshowGridLines(color:UIColor?=UIColor.whiteColor()){
+        let line_vertical = SKSpriteNode(color: color!, size: CGSizeMake(viewpos.width.full.cgfloat, 1));
         line_vertical.position = CGPoint(x:viewpos.width.half.cgfloat, y: viewpos.height.half.cgfloat)
-        let line_vertical_down = SKSpriteNode(color: UIColor.whiteColor(), size: CGSizeMake(viewpos.width.full.cgfloat, 1));
+        let line_vertical_down = SKSpriteNode(color: color!, size: CGSizeMake(viewpos.width.full.cgfloat, 1));
         line_vertical_down.position = CGPoint(x:viewpos.width.half.cgfloat, y: viewpos.height.half_down.cgfloat);
-        let line_vertical_up = SKSpriteNode(color: UIColor.whiteColor(), size: CGSizeMake(viewpos.width.full.cgfloat, 1));
+        let line_vertical_up = SKSpriteNode(color: color!, size: CGSizeMake(viewpos.width.full.cgfloat, 1));
         line_vertical_up.position = CGPoint(x:viewpos.width.half.cgfloat, y: viewpos.height.half_up.cgfloat);
         
-        let line_horizonal = SKSpriteNode(color: UIColor.whiteColor(), size: CGSizeMake(1, viewpos.height.full.cgfloat));
+        let line_horizonal = SKSpriteNode(color: color!, size: CGSizeMake(1, viewpos.height.full.cgfloat));
         line_horizonal.position = CGPoint(x:viewpos.width.half_left.cgfloat, y: viewpos.height.half.cgfloat)
-        let line_horizonal_left = SKSpriteNode(color: UIColor.whiteColor(), size: CGSizeMake(1, viewpos.height.full.cgfloat));
+        let line_horizonal_left = SKSpriteNode(color: color!, size: CGSizeMake(1, viewpos.height.full.cgfloat));
         line_horizonal_left.position = CGPoint(x:viewpos.width.half.cgfloat, y: viewpos.height.half.cgfloat);
-        let line_horizonal_right = SKSpriteNode(color: UIColor.whiteColor(), size: CGSizeMake(1, viewpos.height.full.cgfloat));
+        let line_horizonal_right = SKSpriteNode(color: color!, size: CGSizeMake(1, viewpos.height.full.cgfloat));
         line_horizonal_right.position = CGPoint(x:viewpos.width.half_right.cgfloat, y: viewpos.height.half.cgfloat);
         
         let lines = [line_vertical,line_vertical_down,line_vertical_up,line_horizonal,line_horizonal_left,line_horizonal_right];
         
         for (var i=0;i<lines.count;i++){
             lines[i].zPosition = CGFloat.max;
-            self.addChild(lines[i])
+            self.addChild(lines[i]);
         }
     }
     public func PKfetchViewSize()->(Height:CGFloat,Width:CGFloat){
