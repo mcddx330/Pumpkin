@@ -19,14 +19,14 @@ public class PKTextSet{
 
 extension PKTextSet{
     public func checkMultiLineText(checkString:String)->(Result:Bool,Lines:Array<String>){
-        let sepcnt = checkString.utf16Count; // 識別文字の文字数カウント ("/"や"\n"を考慮して)
+        let sepcnt = count(checkString); // 識別文字の文字数カウント ("/"や"\n"を考慮して)
         var isMultiLine:Bool = false; // マルチラインか否か？
         var txt = PKtext as String; // 編集済文字列用
         var MultiLine:[String] = []; // 複数行用配列
         
         whl:while(true){
-            var chktxt = txt as NSString; // NSRange用
-            var chk:NSRange = chktxt.rangeOfString(checkString, options: NSStringCompareOptions.CaseInsensitiveSearch);
+            let chktxt = txt as NSString; // NSRange用
+            let chk:NSRange = chktxt.rangeOfString(checkString, options: NSStringCompareOptions.CaseInsensitiveSearch);
             if(chk.length != 0){
                 // 文字列抽出
                 isMultiLine = true;
