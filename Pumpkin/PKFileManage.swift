@@ -14,12 +14,12 @@ public class PKFileManage{
     private var docDir:NSString!;
     private var filePath:NSString!;
     private var fileData:NSData!;
+    
     private var DestinationFileName:String = "DefaultGameData.plist";
-
-    public var saveData = Dictionary<String,AnyObject>();
+    public var saveData = PKSaveData();
     
     
-    public init(plistName:String?){
+    public init(plistName:String!){
         if(plistName != nil){
             DestinationFileName = plistName!;
         }
@@ -36,15 +36,15 @@ extension PKFileManage {
         return fileData.writeToFile(filePath as! String, atomically: true);
     }
     
-    public func Load()->Dictionary<String,AnyObject>{
+    public func Load()->PKSaveData{
         let fileManager = NSFileManager.defaultManager();
-        var res = Dictionary<String,AnyObject>();
+        var res = PKSaveData();
         
         if(!fileManager.fileExistsAtPath(filePath! as! String)){
-            res = ["false":false];
+            res = ["Result":false];
         }else{
-            let rawData = NSData(contentsOfFile: filePath! as! String);
-            res = NSKeyedUnarchiver.unarchiveObjectWithData(rawData!) as! Dictionary<String,AnyObject>;
+            let data = NSData(contentsOfFile: filePath! as! String);
+            res = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! PKSaveData;
         }
         return res;
     }
