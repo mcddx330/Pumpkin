@@ -11,7 +11,7 @@ import SpriteKit
 private var AlphaIn:SKAction!, AlphaOut:SKAction!, AlphaTo:SKAction!, MoveTo:SKAction!;
 
 extension SKAction{
-    public class PKSlideInToX{
+    public class PKslideInToX{
         public init (toX:CGFloat, duration:CFTimeInterval, easeType:SKActionTimingMode, alpha:CGFloat?=1.0){
             MoveTo = SKAction.moveToX(toX, duration: duration);
             MoveTo.timingMode = easeType;
@@ -23,7 +23,7 @@ extension SKAction{
         }
     }
     
-    public class PKSlideOutToX{
+    public class PKslideOutToX{
         public init (toX:CGFloat, duration:CFTimeInterval, easeType:SKActionTimingMode, alpha:CGFloat?=0.0){
             MoveTo = SKAction.moveToX(toX, duration: duration);
             MoveTo.timingMode = easeType;
@@ -35,7 +35,7 @@ extension SKAction{
         }
     }
     
-    public class PKSlideOutToY{
+    public class PKslideOutToY{
         public init (toY:CGFloat, duration:CFTimeInterval, easeType:SKActionTimingMode, alpha:CGFloat?=1.0){
             MoveTo = SKAction.moveToY(toY, duration: duration);
             MoveTo.timingMode = easeType;
@@ -47,7 +47,7 @@ extension SKAction{
         }
     }
     
-    public class PKSlideInToY{
+    public class PKslideInToY{
         public init (toY:CGFloat, duration:CFTimeInterval, easeType:SKActionTimingMode, alpha:CGFloat?=0){
             MoveTo = SKAction.moveToY(toY, duration: duration);
             MoveTo.timingMode = easeType;
