@@ -17,7 +17,7 @@ SpriteKit.frameworkでよく使うであろう関数や部位、ゲームのセ�
 ### 入っているもの
 -
 #### 予約済定数
-##### PKPosition -> CGFloat(tuple)
+##### PKPosition -> CGFloat(Tuple)
 - Height
  - Full
  - Middle
@@ -42,7 +42,7 @@ SpriteKit.frameworkでよく使うであろう関数や部位、ゲームのセ�
 アプリ起動中の画面サイズを縦横取得します。
 
 #### PKActionExtension ... SKAction
-##### SlideInX/SlideInYを使う場合は事前にAlpha値を**"0.0"**にしておかないと動きません。
+##### ☆SlideIn(Out)X/SlideIn(Out)Yを使う場合は事前に対象となるSpriteNodeのAlpha値を "0.0" ("1.0") にしておかないと動きません。☆
 - SKAction.PKslideInToX / PKslideInToY (toX/toY:CGFloat, duration:CFTimeInterval, easeType:SKActionTimingMode, alpha:CGFloat?=1.0)  
 指定されたX/Y座標へduration秒かけてスライドインします。
 
