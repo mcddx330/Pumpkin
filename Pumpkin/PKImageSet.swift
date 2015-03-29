@@ -1,5 +1,5 @@
 //
-//  main.swift
+//  PKImageSet.swift
 //  Pumpkin
 //
 //  Created by dimbow. on 2/5/15.
