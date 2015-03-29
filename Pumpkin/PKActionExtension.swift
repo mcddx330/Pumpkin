@@ -1,5 +1,5 @@
 //
-//  main.swift
+//  PKActionExtension.swift
 //  Pumpkin
 //
 //  Created by dimbow. on 2/5/15.
@@ -8,61 +8,54 @@
 
 import SpriteKit
 
-private var AlphaIn:SKAction!;
-private var AlphaOut:SKAction!;
-private var AlphaTo:SKAction!;
-private var MoveTo:SKAction!;
+private var AlphaIn:SKAction!, AlphaOut:SKAction!, AlphaTo:SKAction!, MoveTo:SKAction!;
 
 extension SKAction{
-    public class PKSlideInToX{
-        public init (toX:CGFloat, duration:CFTimeInterval, easeType:SKActionTimingMode){
-            AlphaIn = SKAction.fadeAlphaTo(0, duration: 0);
+    public class PKslideInToX{
+        public init (toX:CGFloat, duration:CFTimeInterval, easeType:SKActionTimingMode, alpha:CGFloat?=1.0){
             MoveTo = SKAction.moveToX(toX, duration: duration);
             MoveTo.timingMode = easeType;
-            AlphaOut = SKAction.fadeAlphaBy(1, duration: duration);
+            AlphaIn = SKAction.fadeAlphaTo(alpha!, duration: duration);
         }
         
         public func PKApply()->SKAction{
-            return SKAction.sequence([SKAction.group([AlphaIn,MoveTo,AlphaOut])]);
+            return SKAction.sequence([SKAction.group([MoveTo,AlphaIn])]);
         }
     }
     
-    public class PKSlideOutToX{
-        public init (toX:CGFloat, duration:CFTimeInterval, easeType:SKActionTimingMode){
-            AlphaIn = SKAction.fadeAlphaTo(1, duration: 0);
+    public class PKslideOutToX{
+        public init (toX:CGFloat, duration:CFTimeInterval, easeType:SKActionTimingMode, alpha:CGFloat?=0.0){
             MoveTo = SKAction.moveToX(toX, duration: duration);
             MoveTo.timingMode = easeType;
-            AlphaOut = SKAction.fadeAlphaBy(0, duration: duration);
+            AlphaOut = SKAction.fadeAlphaBy(alpha!, duration: duration);
         }
         
         public func PKApply()->SKAction{
-            return SKAction.sequence([SKAction.group([AlphaIn,MoveTo,AlphaOut])]);
+            return SKAction.sequence([SKAction.group([MoveTo,AlphaOut])]);
         }
     }
     
-    public class PKSlideOutToY{
-        public init (toY:CGFloat, duration:CFTimeInterval, easeType:SKActionTimingMode){
-            AlphaIn = SKAction.fadeAlphaTo(1, duration: 0);
+    public class PKslideOutToY{
+        public init (toY:CGFloat, duration:CFTimeInterval, easeType:SKActionTimingMode, alpha:CGFloat?=1.0){
             MoveTo = SKAction.moveToY(toY, duration: duration);
             MoveTo.timingMode = easeType;
-            AlphaOut = SKAction.fadeAlphaBy(0, duration: duration);
+            AlphaIn = SKAction.fadeAlphaTo(alpha!, duration: duration);
         }
         
         public func PKApply()->SKAction{
-            return SKAction.sequence([SKAction.group([AlphaIn,MoveTo,AlphaOut])]);
+            return SKAction.sequence([SKAction.group([MoveTo,AlphaOut])]);
         }
     }
     
-    public class PKSlideInToY{
-        public init (toY:CGFloat, duration:CFTimeInterval, easeType:SKActionTimingMode){
-            AlphaIn = SKAction.fadeAlphaTo(1, duration: 0);
+    public class PKslideInToY{
+        public init (toY:CGFloat, duration:CFTimeInterval, easeType:SKActionTimingMode, alpha:CGFloat?=0){
             MoveTo = SKAction.moveToY(toY, duration: duration);
             MoveTo.timingMode = easeType;
-            AlphaOut = SKAction.fadeAlphaBy(0, duration: duration);
+            AlphaIn = SKAction.fadeAlphaTo(alpha!, duration: duration);
         }
         
         public func PKApply()->SKAction{
-            return SKAction.sequence([SKAction.group([AlphaIn,MoveTo,AlphaOut])]);
+            return SKAction.sequence([SKAction.group([MoveTo,AlphaOut])]);
         }
     }
 }

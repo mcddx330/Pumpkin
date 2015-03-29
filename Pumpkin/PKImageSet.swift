@@ -1,5 +1,5 @@
 //
-//  main.swift
+//  PKImageSet.swift
 //  Pumpkin
 //
 //  Created by dimbow. on 2/5/15.
@@ -47,4 +47,17 @@ extension PKImageSet{
         
         return CGFloat(res);
     }
+}
+
+public func PKFetchMinMax(sizearr:Array<CGFloat>,scale:CGFloat=1.0)->(Min:CGFloat,Max:CGFloat){
+    var smin = sizearr[0];
+    var smax = sizearr[0];
+    for(var i=0;i<sizearr.count;i++){
+        if(sizearr[i] > smax){
+            smax = sizearr[i];
+        }else if(sizearr[i] < smin){
+            smin = sizearr[i];
+        }
+    }
+    return(smin*scale,smax*scale)
 }
