@@ -19,7 +19,7 @@ public class PKTextSet{
 
 extension PKTextSet{
     public func checkMultiLineText(checkString:String)->(Result:Bool,Lines:Array<String>){
-        let sepcnt = count(checkString); // 識別文字の文字数カウント ("/"や"\n"を考慮して)
+        let sepcnt = checkString.characters.count; // 識別文字の文字数カウント ("/"や"\n"を考慮して)
         var isMultiLine:Bool = false; // マルチラインか否か？
         var txt = PKtext as String; // 編集済文字列用
         var MultiLine:[String] = []; // 複数行用配列
@@ -38,7 +38,7 @@ extension PKTextSet{
                 txt.removeRange(txt.startIndex..<pos);
             }else{
                 if(isMultiLine == true){
-                    MultiLine.append(chktxt as! String);
+                    MultiLine.append(chktxt as String);
                     isMultiLine = false;
                 }
                 break whl;

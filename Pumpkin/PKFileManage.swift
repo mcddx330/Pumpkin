@@ -33,17 +33,17 @@ public class PKFileManage{
 extension PKFileManage {
     public func Save()->Bool{
         fileData = NSKeyedArchiver.archivedDataWithRootObject(saveData);
-        return fileData.writeToFile(filePath as! String, atomically: true);
+        return fileData.writeToFile(filePath as String, atomically: true);
     }
     
     public func Load()->PKSaveData{
         let fileManager = NSFileManager.defaultManager();
         var res = PKSaveData();
         
-        if(!fileManager.fileExistsAtPath(filePath! as! String)){
+        if(!fileManager.fileExistsAtPath(filePath! as String)){
             res = ["Result":false];
         }else{
-            let data = NSData(contentsOfFile: filePath! as! String);
+            let data = NSData(contentsOfFile: filePath! as String);
             res = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! PKSaveData;
         }
         return res;
