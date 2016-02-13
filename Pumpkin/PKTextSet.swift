@@ -28,14 +28,14 @@ extension PKTextSet{
             let chktxt = txt as NSString; // NSRange用
             let chk:NSRange = chktxt.rangeOfString(checkString, options: NSStringCompareOptions.CaseInsensitiveSearch);
             if(chk.length != 0){
-                // 文字列抽出
-                isMultiLine = true;
-                var pos = advance(txt.startIndex, chk.location);
-                MultiLine.append(txt.substringToIndex(pos));
-                
-                // 抽出した分+識別文字までを削除
-                pos = advance(txt.startIndex,chk.location+sepcnt);
-                txt.removeRange(txt.startIndex..<pos);
+              // 文字列抽出
+              isMultiLine = true;
+              var pos = txt.endIndex.advancedBy(chk.location);
+              MultiLine.append(txt.substringToIndex(pos));
+
+              // 抽出した分+識別文字までを削除
+              pos = txt.startIndex.advancedBy(chk.location + sepcnt);
+              txt.removeRange(txt.startIndex..<pos);
             }else{
                 if(isMultiLine == true){
                     MultiLine.append(chktxt as String);

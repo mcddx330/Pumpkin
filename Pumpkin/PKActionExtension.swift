@@ -46,8 +46,6 @@ extension SKAction{
     }
     
     public func slideIntoX ()->SKAction{
-      print(posX)
-      print(targetDuration)
       MoveTo = SKAction.moveToX(posX, duration: targetDuration);
       MoveTo.timingMode = targetEaseType;
       AlphaIn = SKAction.fadeAlphaTo(targetAlpha, duration: targetDuration);
