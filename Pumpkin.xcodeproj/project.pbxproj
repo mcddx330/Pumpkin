@@ -14,19 +14,7 @@
 		7E9406DC1A849AE600CD0876 /* PKFileManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9406DB1A849AE600CD0876 /* PKFileManage.swift */; };
 		7E9634231A8695000059A06E /* PKActionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9634221A8695000059A06E /* PKActionExtension.swift */; };
 		7ED622F01A8357E100E72604 /* Pumpkin.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED622EF1A8357E100E72604 /* Pumpkin.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7ED622F61A8357E100E72604 /* Pumpkin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED622EA1A8357E100E72604 /* Pumpkin.framework */; };
-		7ED622FD1A8357E100E72604 /* PumpkinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED622FC1A8357E100E72604 /* PumpkinTests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		7ED622F71A8357E100E72604 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7ED622E11A8357E100E72604 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7ED622E91A8357E100E72604;
-			remoteInfo = Pumpkin;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7E0982971A83CEAB004680F1 /* PKSceneExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKSceneExtension.swift; sourceTree = "<group>"; };
@@ -38,9 +26,6 @@
 		7ED622EA1A8357E100E72604 /* Pumpkin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pumpkin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED622EE1A8357E100E72604 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ED622EF1A8357E100E72604 /* Pumpkin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pumpkin.h; sourceTree = "<group>"; };
-		7ED622F51A8357E100E72604 /* PumpkinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PumpkinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7ED622FB1A8357E100E72604 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7ED622FC1A8357E100E72604 /* PumpkinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PumpkinTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,14 +36,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7ED622F21A8357E100E72604 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7ED622F61A8357E100E72604 /* Pumpkin.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -66,7 +43,6 @@
 			isa = PBXGroup;
 			children = (
 				7ED622EC1A8357E100E72604 /* Pumpkin */,
-				7ED622F91A8357E100E72604 /* PumpkinTests */,
 				7ED622EB1A8357E100E72604 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				7ED622EA1A8357E100E72604 /* Pumpkin.framework */,
-				7ED622F51A8357E100E72604 /* PumpkinTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,23 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				7ED622EE1A8357E100E72604 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7ED622F91A8357E100E72604 /* PumpkinTests */ = {
-			isa = PBXGroup;
-			children = (
-				7ED622FC1A8357E100E72604 /* PumpkinTests.swift */,
-				7ED622FA1A8357E100E72604 /* Supporting Files */,
-			);
-			path = PumpkinTests;
-			sourceTree = "<group>";
-		};
-		7ED622FA1A8357E100E72604 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7ED622FB1A8357E100E72604 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -152,24 +110,6 @@
 			productReference = 7ED622EA1A8357E100E72604 /* Pumpkin.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		7ED622F41A8357E100E72604 /* PumpkinTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7ED623031A8357E100E72604 /* Build configuration list for PBXNativeTarget "PumpkinTests" */;
-			buildPhases = (
-				7ED622F11A8357E100E72604 /* Sources */,
-				7ED622F21A8357E100E72604 /* Frameworks */,
-				7ED622F31A8357E100E72604 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7ED622F81A8357E100E72604 /* PBXTargetDependency */,
-			);
-			name = PumpkinTests;
-			productName = PumpkinTests;
-			productReference = 7ED622F51A8357E100E72604 /* PumpkinTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -181,9 +121,6 @@
 				ORGANIZATIONNAME = dimbow.;
 				TargetAttributes = {
 					7ED622E91A8357E100E72604 = {
-						CreatedOnToolsVersion = 6.2;
-					};
-					7ED622F41A8357E100E72604 = {
 						CreatedOnToolsVersion = 6.2;
 					};
 				};
@@ -201,20 +138,12 @@
 			projectRoot = "";
 			targets = (
 				7ED622E91A8357E100E72604 /* Pumpkin */,
-				7ED622F41A8357E100E72604 /* PumpkinTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		7ED622E81A8357E100E72604 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7ED622F31A8357E100E72604 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -237,23 +166,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7ED622F11A8357E100E72604 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7ED622FD1A8357E100E72604 /* PumpkinTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		7ED622F81A8357E100E72604 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7ED622E91A8357E100E72604 /* Pumpkin */;
-			targetProxy = 7ED622F71A8357E100E72604 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		7ED622FE1A8357E100E72604 /* Debug */ = {
@@ -385,40 +298,6 @@
 			};
 			name = Release;
 		};
-		7ED623041A8357E100E72604 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = PumpkinTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "info.marbleritz.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		7ED623051A8357E100E72604 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = PumpkinTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "info.marbleritz.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -436,15 +315,6 @@
 			buildConfigurations = (
 				7ED623011A8357E100E72604 /* Debug */,
 				7ED623021A8357E100E72604 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7ED623031A8357E100E72604 /* Build configuration list for PBXNativeTarget "PumpkinTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7ED623041A8357E100E72604 /* Debug */,
-				7ED623051A8357E100E72604 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
