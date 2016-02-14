@@ -19,7 +19,7 @@ public class PKSpriteNode {
   public var scale_on_iPhone:CGFloat!;
   public var scale_on_iPad:CGFloat!;
   
-  public init(texture: SKTexture, anchor:CGPoint = CGPointMake(0, 0) , scale: CGFloat = 1, position: CGPoint, position_z:CGFloat = 0, alpha:CGFloat = 1, name: String? = nil) {
+  public init(texture: SKTexture, anchor:CGPoint = CGPointMake(0, 0) , scale: CGFloat = 1, position: CGPoint = CGPoint(x: 0, y: 0), position_z:CGFloat = 0, alpha:CGFloat = 1, name: String? = nil) {
     self.texture = texture;
     
     // check anchor numeric.
