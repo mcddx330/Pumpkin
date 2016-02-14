@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7E0982981A83CEAB004680F1 /* PKSceneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0982971A83CEAB004680F1 /* PKSceneExtension.swift */; };
 		7E25EF4D1AC80DD500621AF1 /* PKFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E25EF4C1AC80DD500621AF1 /* PKFuncs.swift */; };
+		7E5942611C6FCB8000639747 /* PKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5942601C6FCB8000639747 /* PKSpriteNode.swift */; };
 		7E5982581A8358B500B1B113 /* PKImageSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5982571A8358B500B1B113 /* PKImageSet.swift */; };
 		7E7EC8641A86CBB6008781A8 /* PKTextSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7EC8631A86CBB6008781A8 /* PKTextSet.swift */; };
 		7E815E891C6F1F270046E1AA /* Pumpkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E815E881C6F1F270046E1AA /* Pumpkin.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		7E0982971A83CEAB004680F1 /* PKSceneExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKSceneExtension.swift; sourceTree = "<group>"; };
 		7E25EF4C1AC80DD500621AF1 /* PKFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKFuncs.swift; sourceTree = "<group>"; };
+		7E5942601C6FCB8000639747 /* PKSpriteNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKSpriteNode.swift; sourceTree = "<group>"; };
 		7E5982571A8358B500B1B113 /* PKImageSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKImageSet.swift; sourceTree = "<group>"; };
 		7E7EC8631A86CBB6008781A8 /* PKTextSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKTextSet.swift; sourceTree = "<group>"; };
 		7E815E881C6F1F270046E1AA /* Pumpkin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pumpkin.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				7E25EF4C1AC80DD500621AF1 /* PKFuncs.swift */,
 				7E815E881C6F1F270046E1AA /* Pumpkin.swift */,
 				7E815E8A1C6F1F460046E1AA /* PKEnums.swift */,
+				7E5942601C6FCB8000639747 /* PKSpriteNode.swift */,
 				7ED622ED1A8357E100E72604 /* Supporting Files */,
 			);
 			path = Pumpkin;
@@ -128,6 +131,7 @@
 				TargetAttributes = {
 					7ED622E91A8357E100E72604 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = Z26R273K94;
 					};
 				};
 			};
@@ -166,6 +170,7 @@
 				7E25EF4D1AC80DD500621AF1 /* PKFuncs.swift in Sources */,
 				7E9406DC1A849AE600CD0876 /* PKFileManage.swift in Sources */,
 				7E0982981A83CEAB004680F1 /* PKSceneExtension.swift in Sources */,
+				7E5942611C6FCB8000639747 /* PKSpriteNode.swift in Sources */,
 				7E815E8B1C6F1F460046E1AA /* PKEnums.swift in Sources */,
 				7E7EC8641A86CBB6008781A8 /* PKTextSet.swift in Sources */,
 				7E5982581A8358B500B1B113 /* PKImageSet.swift in Sources */,
@@ -213,6 +218,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "@rpath";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -253,6 +259,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "@rpath";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
