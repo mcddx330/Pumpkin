@@ -27,7 +27,7 @@ extension Pumpkin {
     case iPhone6      = 375.0;
     case iPhone6Plus  = 414.0;
     case iPad         = 768.0;
-    case iPadPro      = 1366.0;
+    case iPadPro      = 1024.0;
   }
   
   enum DeviceSizeHeight: CGFloat {
