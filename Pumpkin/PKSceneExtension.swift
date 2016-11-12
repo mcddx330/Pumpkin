@@ -8,30 +8,31 @@
 
 import SpriteKit
 
-extension SKScene{
-    public func PKshowGridLines(color:UIColor?=UIColor.whiteColor()){
-        let linevertical = SKSpriteNode(color: color!, size: CGSizeMake(PKPosition.Height.Full.cgfloat, 1));
-        linevertical.position = CGPoint(x:PKPosition.Width.Middle.cgfloat, y: PKPosition.Height.Middle.cgfloat)
-        let lineverticaldown = SKSpriteNode(color: color!, size: CGSizeMake(PKPosition.Width.Full.cgfloat, 1));
-        lineverticaldown.position = CGPoint(x:PKPosition.Width.Middle.cgfloat, y: PKPosition.Height.MiddleDown.cgfloat);
-        let lineverticalUp = SKSpriteNode(color: color!, size: CGSizeMake(PKPosition.Width.Full.cgfloat, 1));
-        lineverticalUp.position = CGPoint(x:PKPosition.Width.Middle.cgfloat, y: PKPosition.Height.MiddleUp.cgfloat);
+extension SKScene {
+    public func PKshowGridLines(_ color: UIColor?=UIColor.white) {
+        let linevertical = SKSpriteNode(color:  color!,  size:  CGSize(width:  PKPosition.Height.Full.cgfloat,  height:  1));
+        linevertical.position = CGPoint(x: PKPosition.Width.Middle.cgfloat,  y:  PKPosition.Height.Middle.cgfloat)
+        let lineverticaldown = SKSpriteNode(color:  color!,  size:  CGSize(width:  PKPosition.Width.Full.cgfloat,  height:  1));
+        lineverticaldown.position = CGPoint(x: PKPosition.Width.Middle.cgfloat,  y:  PKPosition.Height.MiddleDown.cgfloat);
+        let lineverticalUp = SKSpriteNode(color:  color!,  size:  CGSize(width:  PKPosition.Width.Full.cgfloat,  height:  1));
+        lineverticalUp.position = CGPoint(x: PKPosition.Width.Middle.cgfloat,  y:  PKPosition.Height.MiddleUp.cgfloat);
         
-        let linehorizonal = SKSpriteNode(color: color!, size: CGSizeMake(1, PKPosition.Height.Full.cgfloat));
-        linehorizonal.position = CGPoint(x:PKPosition.Width.MiddleLeft.cgfloat, y: PKPosition.Height.Middle.cgfloat)
-        let linehorizonalleft = SKSpriteNode(color: color!, size: CGSizeMake(1, PKPosition.Height.Full.cgfloat));
-        linehorizonalleft.position = CGPoint(x:PKPosition.Width.Middle.cgfloat, y: PKPosition.Height.Middle.cgfloat);
-        let linehorizonalright = SKSpriteNode(color: color!, size: CGSizeMake(1, PKPosition.Height.Full.cgfloat));
-        linehorizonalright.position = CGPoint(x:PKPosition.Width.MiddleRight.cgfloat, y: PKPosition.Height.Middle.cgfloat);
+        let linehorizonal = SKSpriteNode(color:  color!,  size:  CGSize(width:  1,  height:  PKPosition.Height.Full.cgfloat));
+        linehorizonal.position = CGPoint(x: PKPosition.Width.MiddleLeft.cgfloat,  y:  PKPosition.Height.Middle.cgfloat)
+        let linehorizonalleft = SKSpriteNode(color:  color!,  size:  CGSize(width:  1,  height:  PKPosition.Height.Full.cgfloat));
+        linehorizonalleft.position = CGPoint(x: PKPosition.Width.Middle.cgfloat,  y:  PKPosition.Height.Middle.cgfloat);
+        let linehorizonalright = SKSpriteNode(color:  color!,  size:  CGSize(width:  1,  height:  PKPosition.Height.Full.cgfloat));
+        linehorizonalright.position = CGPoint(x: PKPosition.Width.MiddleRight.cgfloat,  y:  PKPosition.Height.Middle.cgfloat);
         
-        let lines = [linevertical,lineverticaldown,lineverticalUp,linehorizonal,linehorizonalleft,linehorizonalright];
+        let lines = [linevertical, lineverticaldown, lineverticalUp, linehorizonal, linehorizonalleft, linehorizonalright];
         
-        for (var i=0;i<lines.count;i++){
-            lines[i].zPosition = CGFloat.max;
+        for i in 0 ..< lines.count  {
+            lines[i].zPosition = CGFloat.greatestFiniteMagnitude;
             self.addChild(lines[i]);
         }
     }
-    public func PKfetchViewSize()->(Height:CGFloat,Width:CGFloat){
-        return (PKPosition.Height.Full.cgfloat,PKPosition.Width.Full.cgfloat);
+
+    public func PKfetchViewSize()->(Height: CGFloat, Width: CGFloat) {
+        return (PKPosition.Height.Full.cgfloat, PKPosition.Width.Full.cgfloat);
     }
 }

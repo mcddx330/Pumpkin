@@ -9,55 +9,55 @@
 import SpriteKit
 
 
-public class PKImageSet{
-    var name:String!;
-    var filterType = SKTextureFilteringMode.Linear;
-    
-    public init(fileName:String){
+open class PKImageSet {
+    private var name: String!;
+    private var filterType = SKTextureFilteringMode.linear;
+
+    public init(fileName: String) {
         name = fileName;
     }
-}
 
-extension PKImageSet{
-    public func fetchImageSize()->(Height:CGFloat,Width:CGFloat){
-        var sz:[CGFloat] = [0,0];
-        if(name != "" && name != nil){
+    public func fetchImageSize() -> (Height: CGFloat, Width: CGFloat) {
+        var sz:[CGFloat] = [0, 0];
+        if (name != "" && name != nil) {
             let node = SKSpriteNode(imageNamed: name!);
-            sz = [node.size.height,node.size.width];
+            sz = [node.size.height, node.size.width];
         }
-        return(sz[0],sz[1]);
+
+        return(sz[0], sz[1]);
     }
 
-    public func fitToViewer()->CGFloat{
+    public func fitToViewer()->CGFloat {
         let sz = fetchImageSize();
-        let h = UIScreen.mainScreen().bounds.size.height/sz.Height;
-        let w = UIScreen.mainScreen().bounds.size.width/sz.Width;
+        let h = UIScreen.main.bounds.size.height/sz.Height;
+        let w = UIScreen.main.bounds.size.width/sz.Width;
         var res:CGFloat = 1.0;
-        
-        if(h<w){
+
+        if (h<w) {
             res = h;
-        }else{
+        }else {
             res = w;
         }
-        
+
         // 画面サイズより画像が小さかったら等倍以上にする
-        if(sz.Height<UIScreen.mainScreen().bounds.size.height || sz.Width < UIScreen.mainScreen().bounds.size.width){
+        if (sz.Height<UIScreen.main.bounds.size.height || sz.Width < UIScreen.main.bounds.size.width) {
             res = 1+(1-res);
         }
-        
+
         return CGFloat(res);
     }
 }
 
-public func PKFetchMinMax(sizearr:Array<CGFloat>,scale:CGFloat=1.0)->(Min:CGFloat,Max:CGFloat){
+public func PKFetchMinMax(_ sizearr:Array<CGFloat>, scale:CGFloat=1.0)->(Min:CGFloat, Max:CGFloat) {
     var smin = sizearr[0];
     var smax = sizearr[0];
-    for(var i=0;i<sizearr.count;i++){
-        if(sizearr[i] > smax){
+    for i in 0 ..< sizearr.count  {
+        if (sizearr[i] > smax) {
             smax = sizearr[i];
-        }else if(sizearr[i] < smin){
+        }else if (sizearr[i] < smin) {
             smin = sizearr[i];
         }
     }
-    return(smin*scale,smax*scale)
+
+    return(smin*scale, smax*scale)
 }

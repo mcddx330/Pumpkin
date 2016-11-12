@@ -8,44 +8,58 @@
 
 import Foundation
 
-public typealias PKSaveData = Dictionary<String,AnyObject>;
-public class PKFileManage{
-    private var domainPaths:NSArray!;
-    private var docDir:NSString!;
-    private var filePath:NSString!;
-    private var fileData:NSData!;
+public typealias PKSaveData = Dictionary<String,Any>;
+open class PKFileManage {
+    private var document_directory: String = "";
+    private var file_path: String = "";
+    private var file_data: Data;
     
-    private var DestinationFileName:String = "DefaultGameData.plist";
-    public var saveData = PKSaveData();
+    private var destination_file_name: String = "DefaultGameData.plist";
     
     
-    public init(plistName:String!){
-        if(plistName != nil){
-            DestinationFileName = plistName!;
+    public init(plist_name: String!) {
+        if (plist_name != nil) {
+            self.destination_file_name = plist_name;
         }
-        domainPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray;
-        docDir = domainPaths!.objectAtIndex(0) as? NSString;
-        filePath = docDir!.stringByAppendingPathComponent(DestinationFileName);
-    }
-}
-
-
-extension PKFileManage {
-    public func Save()->Bool{
-        fileData = NSKeyedArchiver.archivedDataWithRootObject(saveData);
-        return fileData.writeToFile(filePath as String, atomically: true);
-    }
-    
-    public func Load()->PKSaveData{
-        let fileManager = NSFileManager.defaultManager();
-        var res = PKSaveData();
         
-        if(!fileManager.fileExistsAtPath(filePath! as String)){
-            res = ["Result":false];
-        }else{
-            let data = NSData(contentsOfFile: filePath! as String);
-            res = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! PKSaveData;
+        // initialize
+        self.document_directory  = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0];
+        self.file_path           = document_directory + "/" + destination_file_name;
+        self.file_data           = NSKeyedArchiver.archivedData(withRootObject:  "");
+    }
+
+    /**
+     * Get save file path.
+     */
+    public func getDocumentPath()->String {
+        return self.file_path;
+    }
+
+    /**
+     * Save with serialize.
+     */
+    public func Save(data:  PKSaveData)->Bool {
+        self.file_data = NSKeyedArchiver.archivedData(withRootObject:  data);
+        do {
+            try file_data.write(to:  URL(fileURLWithPath:  file_path), options:  .atomic);
+        } catch {
+            return false;
         }
-        return res;
+        
+        return true
+    }
+
+    /**
+     * Deselialize and load save data.
+     */
+    public func Load()->PKSaveData {
+        let fileManager = FileManager.default;
+        
+        guard fileManager.fileExists(atPath:  file_path) else {
+            return ["_load_status":  false];
+        }
+        let data = try? Data(contentsOf:  URL(fileURLWithPath:  file_path));
+
+        return NSKeyedUnarchiver.unarchiveObject(with:  data!) as! PKSaveData;
     }
 }
