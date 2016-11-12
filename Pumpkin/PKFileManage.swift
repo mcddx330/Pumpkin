@@ -14,7 +14,7 @@ open class PKFileManage {
     private var file_path: String = "";
     private var file_data: Data;
     
-    private var destination_file_name: String = "DefaultGameData.plist";
+    private var destination_file_name: String = "DefaultGameData";
     
     
     public init(plist_name: String!) {
@@ -24,8 +24,8 @@ open class PKFileManage {
         
         // initialize
         self.document_directory  = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0];
-        self.file_path           = document_directory + "/" + destination_file_name;
-        self.file_data           = NSKeyedArchiver.archivedData(withRootObject:  "");
+        self.file_path            = document_directory + "/" + destination_file_name + ".plist";
+        self.file_data            = NSKeyedArchiver.archivedData(withRootObject:  "");
     }
 
     /**
@@ -56,10 +56,20 @@ open class PKFileManage {
         let fileManager = FileManager.default;
         
         guard fileManager.fileExists(atPath:  file_path) else {
-            return ["_load_status":  false];
+            return [
+                "_return":  false,
+                "_message": "Save data is not exists.",
+            ];
         }
-        let data = try? Data(contentsOf:  URL(fileURLWithPath:  file_path));
+        let file = try? Data(contentsOf:  URL(fileURLWithPath:  file_path));
 
-        return NSKeyedUnarchiver.unarchiveObject(with:  data!) as! PKSaveData;
+        guard let data = NSKeyedUnarchiver.unarchiveObject(with: file!) else {
+            return [
+                "_return":  false,
+                "_message": "Save data is malformed."
+            ];
+        }
+
+        return data as! PKSaveData;
     }
 }

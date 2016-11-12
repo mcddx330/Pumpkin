@@ -11,4 +11,11 @@ savedata = [
 ];
 file.Save(data: savedata);
 
-var savefile = file.Load();
+let savefile = file.Load();
+if let status = savefile["_return"] {
+    print(savefile["_message"]!);
+} else {
+    print(savefile);
+}
+
+print(file.getDocumentPath());
