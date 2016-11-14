@@ -64,11 +64,32 @@ SpriteKit.frameworkでよく使うであろう関数や部位、ゲームのセ�
 画像のサイズ、比率に応じて画面にぴったり収まる拡大率を返します。
 
 #### PKTextSet
-- PKTextSet(text: "hogefuga")
- - checkMultiLineText(checkString: "\n / | / etc...")-> (Result:Bool,Lines:Array<String>)  
-改行を含んだテキスト（長いセリフなど）を表示する際に先頭の文字から指定した印までの文字数を計算し、  
-各行の文章を配列に挿入した上で返します。  
-改行を含んだテキストではない場合はResultの値が **false** となります。
+- String.PKSeparateStrings(separator: String) -> [String]
+ - Stringごとに文字を区切り、配列に並べます。
+
+```
+let text = "Sample Text.";
+print(text.PKSeparateStrings(separator: " ")); // ["Sample", "Text."]
+```
+
+- String.PKSeparateStringsWithStringLength(separator: String) -> [Int: (count: Int, string: String)]
+ - Stringごとに文字を区切り、文字数と文章を返します。
+
+```
+let text = "Sample Text.";
+let separate = text.PKSeparateStringsWithStringLength(separator: " ");
+print(separate[0]?.string) // "Sample"
+for (count, sep) in separate {
+    print(count)
+    print(sep);
+}
+/*
+0
+(6, "Sample")
+1
+(5, "Text.")
+*/
+```
 
 #### PKFileManage
 - PKFileManage.**saveData** : Dictionary<String,AnyObject>  
